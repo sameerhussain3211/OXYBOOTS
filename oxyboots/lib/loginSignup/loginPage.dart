@@ -1,8 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter/widgets.dart';
+import 'package:oxyboots/loginSignup/recoveryPassword.dart';
 import 'package:oxyboots/loginSignup/signUpPage.dart';
-
 import '../customWidgets/customButtom.dart';
 
 class Loginpage extends StatefulWidget {
@@ -129,7 +127,13 @@ class _LoginpageState extends State<Loginpage> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Recoverypassword(),
+                            ));
+                      },
                       child: const Text("Recovery Password"),
                     ),
                   ],
@@ -185,7 +189,13 @@ class _LoginpageState extends State<Loginpage> {
                   children: [
                     const Text("Don't Have An Account? "),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Signuppage(),
+                            ));
+                      },
                       child: const Text(
                         "Sign Up For Free",
                         style: TextStyle(fontWeight: FontWeight.bold),
