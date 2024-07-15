@@ -149,35 +149,76 @@ class _HomepageState extends State<Homepage> {
             padding: const EdgeInsets.all(10.0),
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 15, right: 15),
-                  child: Container(
-                    height: 60,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 250, 250, 250),
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    child: const Padding(
-                      padding: EdgeInsets.only(left: 10),
-                      child: Row(
-                        children: [
-                          Icon(Icons.search),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Expanded(
-                            // Added Expanded to make sure TextField takes available space
-                            child: TextField(
-                              decoration: InputDecoration(
-                                border: InputBorder.none,
-                                hintText: 'Looking For Shoes',
-                              ),
+                  child: InkWell(
+                    onTap: () {
+                      showModalBottomSheet<void>(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return const SizedBox(
+                            height: 600,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                SizedBox(
+                                  height: 40,
+                                ),
+                                Row(
+                                  children: [
+                                    SizedBox(
+                                      width: 150,
+                                    ),
+                                    Text(
+                                      "Filters",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 25),
+                                    ),
+                                    SizedBox(
+                                      width: 150,
+                                    ),
+                                    Text(
+                                      "Reset",
+                                      style: TextStyle(fontSize: 15),
+                                    )
+                                  ],
+                                ),
+                                Text("hwll")
+                              ],
                             ),
-                          ),
-                        ],
+                          );
+                        },
+                      );
+                    },
+                    child: Container(
+                      height: 60,
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(255, 250, 250, 250),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: const Padding(
+                        padding: EdgeInsets.only(left: 10),
+                        child: Row(
+                          children: [
+                            Icon(Icons.search),
+                            const SizedBox(
+                              width: 20,
+                            ),
+                            Expanded(
+                                // Added Expanded to make sure TextField takes available space
+                                child: Text(
+                              "Looking For Shoes",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: Color.fromARGB(255, 98, 98, 98)),
+                            )),
+                          ],
+                        ),
                       ),
                     ),
                   ),
