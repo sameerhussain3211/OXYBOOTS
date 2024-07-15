@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oxyboots/home/homePage.dart';
 import 'package:oxyboots/loginSignup/recoveryPassword.dart';
 import 'package:oxyboots/loginSignup/signUpPage.dart';
 import '../customWidgets/customButtom.dart';
@@ -144,7 +145,13 @@ class _LoginpageState extends State<Loginpage> {
                   child: Custombuttom(
                     title: "Sign In",
                     size: 450,
-                    onPressedCallback: () {},
+                    onPressedCallback: () {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Homepage(),
+                          ));
+                    },
                   ),
                 ),
                 const SizedBox(height: 40),

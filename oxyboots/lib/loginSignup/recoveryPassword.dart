@@ -58,8 +58,8 @@ class _RecoverypasswordState extends State<Recoverypassword> {
                   ),
                 ),
                 const SizedBox(height: 10),
-                Center(
-                  child: Container(
+                const Center(
+                  child: SizedBox(
                     width: 350,
                     child: Text(
                       "Please Enter Your Email Address To Recieve a Verification Code",
